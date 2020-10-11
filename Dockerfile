@@ -42,8 +42,8 @@ USER postgres
 # Note: here we use ``&&\`` to run commands one after the other - the ``\``
 #       allows the RUN command to span multiple lines.
 RUN    /etc/init.d/postgresql start &&\
-    psql --command "CREATE USER postgresondocker WITH SUPERUSER PASSWORD 'postgresondocker';" &&\
-    createdb -O postgresondocker postgresondocker &&\
+   # psql --command "CREATE USER postgresondocker WITH SUPERUSER PASSWORD 'postgresondocker';" &&\
+    createdb -O postgres postgres &&\
     psql --command "CREATE DATABASE huda_backup;" 
 
 # Adjust PostgreSQL configuration so that remote connections to the
