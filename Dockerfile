@@ -35,7 +35,7 @@ RUN apt-get install -y ssh
 
 RUN service ssh start
 
-USER postgres
+USER postgresondocker
  
 # Create a PostgreSQL role named ``postgresondocker`` with ``postgresondocker`` as the password and
 # then create a database `postgresondocker` owned by the ``postgresondocker`` role.
