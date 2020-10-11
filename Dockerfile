@@ -57,7 +57,7 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.6/main/postgresql.conf
 EXPOSE 5432
  
 # Add VOLUMEs to allow backup of config, logs and databases
-VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
+#VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
 #chown -Rf postgres:postgres /data/postgresql
 #chmod -R 700 /data/postgresql
