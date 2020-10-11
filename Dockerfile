@@ -59,7 +59,10 @@ EXPOSE 5432
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
- 
+chown -Rf postgres:postgres /data/postgresql
+chmod -R 700 /data/postgresql
+sudo -u postgres /usr/lib/posgtresql/9.6/bin/postgres -D /var/liv/postgresql/9.6/main -c config_file=/etc/postgresql/9.6/main/postgresql.conf
 
 # Set the default command to run when starting the container
-CMD ["/usr/lib/postgresql/9.6/bin/postgres", "-D", "/var/lib/postgresql/9.6/main", "-c", "config_file=/etc/postgresql/9.6/main/postgresql.conf"]
+#CMD ["/usr/lib/postgresql/9.6/bin/postgres", "-D", "/var/lib/postgresql/9.6/main", "-c", "config_file=/etc/postgresql/9.6/main/postgresql.conf"]
+CMD ["bash", "/run.sh"]
